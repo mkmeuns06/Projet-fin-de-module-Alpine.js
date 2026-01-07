@@ -17,6 +17,23 @@
             <p class="text-muted">Organisez vos tâches efficacement</p>
         </header>
 
+<div class="card mb-4 shadow-sm">
+    <div class="card-body">
+        <h5 class="card-title mb-3">Ajouter une nouvelle tâche</h5>
+        <form @submit.prevent="addTask">
+            <div class="mb-3">
+                <label class="form-label">Titre *</label>
+                <input type="text" class="form-control" x-model="newTask.title" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Description</label>
+                <textarea class="form-control" rows="3" x-model="newTask.description"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Ajouter la tâche</button>
+        </form>
+    </div>
+</div>
+
         <div class="row g-3">
             <template x-for="task in tasks" :key="task.id">
                 <div class="col-12 col-md-6 col-lg-4">
@@ -34,6 +51,11 @@
                             </div>
                             <p class="card-text text-muted" x-text="task.description"></p>
                         </div>
+                        <div class="card-footer bg-transparent border-0">
+    <button @click="deleteTask(task.id)" class="btn btn-sm btn-outline-danger w-100">
+        Supprimer
+        </button>
+    </div>
                     </div>
                 </div>
             </template>
