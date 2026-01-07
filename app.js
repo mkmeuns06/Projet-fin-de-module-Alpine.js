@@ -6,6 +6,8 @@ function taskManager() {
             description: ''
         },
         editingTask: null,
+        searchQuery: '',
+        filterStatus: '',
 
         init() {
             
@@ -71,6 +73,18 @@ function taskManager() {
 
         cancelEdit() {
             this.editingTask = null;
+        },
+
+        get filteredTasks() {
+            return this.tasks.filter(task => {
+                const matchesSearch = task.title.toLowerCase().includes(this.searchQuery.toLowerCase());
+                const matchesFilter = this.filterStatus === '' || task.status === this.filterStatus;
+                return matchesSearch && matchesFilter;
+            });
+        },
+
+        countByStatus(status) {
+            return this.tasks.filter(task => task.status === status).length;
         },
 
         saveTasks() {

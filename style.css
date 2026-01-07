@@ -234,3 +234,17 @@ textarea::placeholder {
 .modal-content {
     padding: 1.5rem;
 }
+
+.badge.fs-6 {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem !important;
+    border-radius: 3px;
+}
+
+.mb-4 {
+    margin-bottom: 2rem !important;
+}
+
+.mb-5 {
+    margin-bottom: 2.5rem !important;
+}

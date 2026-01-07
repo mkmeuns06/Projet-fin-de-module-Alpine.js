@@ -33,9 +33,39 @@
                 </form>
             </div>
         </div>
-
+        <div class="card mb-4 shadow-sm">
+    <div class="card-body">
         <div class="row g-3">
-            <template x-for="task in tasks" :key="task.id">
+            <div class="col-md-6">
+                <label class="form-label">Rechercher par titre</label>
+                <input type="text" class="form-control" x-model="searchQuery" placeholder="Rechercher...">
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Filtrer par statut</label>
+                <select class="form-select" x-model="filterStatus">
+                    <option value="">Tous</option>
+                    <option value="A faire">A faire</option>
+                    <option value="En cours">En cours</option>
+                    <option value="Terminé">Terminé</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="row mt-3 text-center">
+            <div class="col-4">
+                <div class="badge bg-warning fs-6">A faire: <span x-text="countByStatus('A faire')"></span></div>
+            </div>
+            <div class="col-4">
+                <div class="badge bg-info fs-6">En cours: <span x-text="countByStatus('En cours')"></span></div>
+            </div>
+            <div class="col-4">
+                <div class="badge bg-success fs-6">Terminé: <span x-text="countByStatus('Terminé')"></span></div>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="row g-3">
+            <template x-for="task in filteredTasks" :key="task.id">
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="card h-100 shadow-sm">
                         <div class="card-body">
