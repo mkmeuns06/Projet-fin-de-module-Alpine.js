@@ -5,9 +5,10 @@ function taskManager() {
             title: '',
             description: ''
         },
+        editingTask: null,
 
         init() {
-
+            
             const savedTasks = localStorage.getItem('tasks');
             if (savedTasks) {
                 this.tasks = JSON.parse(savedTasks);
@@ -53,6 +54,23 @@ function taskManager() {
                 this.tasks = this.tasks.filter(task => task.id !== id);
                 this.saveTasks();
             }
+        },
+
+        editTask(task) {
+            this.editingTask = { ...task };
+        },
+
+        saveEdit() {
+            const index = this.tasks.findIndex(t => t.id === this.editingTask.id);
+            if (index !== -1) {
+                this.tasks[index] = { ...this.editingTask };
+                this.saveTasks();
+            }
+            this.cancelEdit();
+        },
+
+        cancelEdit() {
+            this.editingTask = null;
         },
 
         saveTasks() {
