@@ -19,14 +19,14 @@ function taskManager() {
                 this.tasks = [
                     { 
                         id: Date.now(), 
-                        title: "Apprendre Alpine.js", 
-                        description: "Suivre le tutoriel complet", 
+                        title: "Préparer Valise", 
+                        description: "Peser valise, mettre affaires dedans", 
                         status: "En cours" 
                     },
                     { 
                         id: Date.now() + 1, 
-                        title: "Créer le projet", 
-                        description: "Développer le gestionnaire de tâches", 
+                        title: "Ranger garage", 
+                        description: "Regonfler vélos et aspirer voiture", 
                         status: "A faire" 
                     }
                 ];
