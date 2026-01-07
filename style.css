@@ -95,3 +95,74 @@ header p {
         font-size: 1.75rem;
     }
 }
+
+.btn {
+    border-radius: 4px;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: all 0.15s ease;
+    font-size: 0.9rem;
+}
+
+.btn-primary {
+    background: #1a1a1a;
+    border: 1px solid #1a1a1a;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #404040;
+    border-color: #404040;
+}
+
+.btn-outline-danger {
+    color: #dc2626;
+    border: 1px solid #d4d4d4;
+    background: white;
+}
+
+.btn-outline-danger:hover {
+    background: #fef2f2;
+    border-color: #dc2626;
+    color: #dc2626;
+}
+
+.form-label {
+    color: #1a1a1a;
+    font-weight: 500;
+    font-size: 0.85rem;
+    margin-bottom: 0.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-control, .form-select {
+    border: 1px solid #d4d4d4;
+    border-radius: 4px;
+    padding: 0.65rem 0.85rem;
+    font-size: 0.9rem;
+    transition: border-color 0.15s;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #1a1a1a;
+    box-shadow: none;
+    outline: none;
+}
+
+.card-footer {
+    background: #fafafa !important;
+    border-top: 1px solid #e0e0e0 !important;
+    padding: 0.75rem;
+}
+
+input[type="text"]::placeholder,
+textarea::placeholder {
+    color: #a3a3a3;
+}
+
+.card-title.mb-3 {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #1a1a1a;
+}
